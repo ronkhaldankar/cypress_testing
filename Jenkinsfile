@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-      environment {
-        CHROME_BIN = '/bin/google-chrome'  // Only if needed
-    }
+    //   environment {
+    //     CHROME_BIN = '/bin/google-chrome'  // Only if needed
+    // }
     stages {
         stage('Checkout Code') {
             steps {
@@ -12,12 +12,12 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
         stage('Run Cypress Tests') {
             steps {
-                sh 'npx cypress run'
+                bat 'npx cypress run'
             }
         }
     }
