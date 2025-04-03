@@ -12,12 +12,12 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                sh 'npm install'
             }
         }
         stage('Run Cypress Tests') {
             steps {
-                bat 'npx cypress run'
+                sh 'npx cypress run'
             }
         }
     }
