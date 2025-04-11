@@ -65,9 +65,9 @@ jobs:
       - name: Deploy to Azure VM
         run: |
           ssh ${{ secrets.AZURE_VM_USER }}@${{ secrets.AZURE_VM_IP }} << 'EOF'
-            cd /var/www/your-app-folder # path on your Azure VM
+            cd /home/mca.2319 # path on your Azure VM
             git pull origin main
             npm install
             npm run build
-            pm2 restart your-app-name # or however you run the app
+            pm2 restart cypress_testing # or however you run the app
           EOF
