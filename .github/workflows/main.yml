@@ -49,4 +49,34 @@ jobs:
 
       - name: Run Cypress Component Tests
         run: npx cypress run --component
+
+
+  deploy:
+    needs: [e2e-tests, component-tests]
+    runs-on: ubuntu-latest
+    if: ${{ success() }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.AZURE_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.AZURE_VM_IP }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to Azure VM
+        run: |
+          ssh ${{ secrets.AZURE_VM_USER }}@${{ secrets.AZURE_VM_IP }} << 'EOF'
+            cd ~/my-nextjs-app
+            git pull origin main
+            npm install
+            npm run build
+            pm2 restart app || pm2 start npm --name "app" -- start
+          EOF
+
+
+
+
         
