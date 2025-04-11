@@ -69,5 +69,5 @@ jobs:
             git pull origin main
             npm install
             npm run build
-            pm2 restart cypress_testing # or however you run the app
+            npm start
           EOF
