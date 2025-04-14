@@ -49,7 +49,7 @@ jobs:
         run: npx cypress run --component
 
   deploy:
-    needs: [e2e-tests, component-tests] # only runs if tests pass
+    needs: [e2e-tests, component-tests] # only runs if tests pass k
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
