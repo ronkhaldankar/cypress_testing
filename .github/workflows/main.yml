@@ -59,7 +59,7 @@ jobs:
           username: raunak2000
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/mca.2319/cypress_testing
+            cd /home/raunak2000/cypress_testing
             git pull origin main
             npm install
             npm run build
