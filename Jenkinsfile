@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     //   environment {
-    //     CHROME_BIN = '/bin/google-chrome'  // Only if needed
+    //     CHROME_BIN = '/bin/google-chrome'  
     // }
     stages {
         // stage('Checkout Code') {
