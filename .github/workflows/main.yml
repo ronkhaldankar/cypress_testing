@@ -64,4 +64,4 @@ jobs:
             npm install
             npm run build
             pm2 restart app || pm2 start npm --name app -- run start
-#it should work now
+
