@@ -7,7 +7,7 @@ const Counter = () => {
   return (
     <div className="bg-gray-800 text-white p-5 max-w-sm mx-auto rounded-lg">
       <h2 className="text-xl font-bold mb-4">Counter</h2>
-      <h3>hi</h3>
+      {/* <h3>hi</h3> */}
       <div className="flex items-center justify-between">
         <button
           data-id="minus-count-btn"
