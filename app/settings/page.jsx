@@ -10,7 +10,7 @@ export default function SettingsPage() {
             Settings
             </h2>
             <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed m-10">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque doloremque delectus quis! Consectetur quae sint nesciunt dolor expedita nostrum, numquam amet. Molestias nemo veniam corrupti at dicta architecto accusamus a?
+            Lorems ipsum dolor sit, amet consectetur adipisicing elit. Itaque doloremque delectus quis! Consectetur quae sint nesciunt dolor expedita nostrum, numquam amet. Molestias nemo veniam corrupti at dicta architecto accusamus a?
             </p>
             <TodoList />
         </main>
